@@ -1,0 +1,457 @@
+:root {
+    --background-color: #f5f5f0;
+    --accent-color: #4f6f52;
+    --alert-color: #d9822b;
+}
+#desktopMenu {
+    display: flex;
+    gap: 20px;
+}
+
+#desktopMenu a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta {
+    background-color: var(--alert-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+h1 {
+    color: rgb(200, 97, 97);
+}
+
+p {
+    font-size: 18px;
+}
+.hero {
+    background-image: url("images/port.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero h1 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px 25px;
+    display: block;
+    border-radius: 8px;
+    width: fit-content;
+    margin: 20px auto;
+}
+.hero p {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    display: block;
+    border-radius: 8px;
+    width: fit-content;
+    margin: 20px auto;
+}
+.cta {
+    background-color: var(--alert-color);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    width: auto;
+}
+img {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+} 
+main {
+    background-color: var(--background-color);
+    padding: 30px;
+}
+section{
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* Phone */
+.aboutContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.aboutContainer p {
+    flex: 1;
+}
+
+.aboutContainer img {
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+}
+.skillsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+/* Phone */
+@media screen and (max-width: 600px) {
+    .skillsContainer {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .skillsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.experienceContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+.skillBox {
+    padding: 20px;
+    background-color: #f0f3f5;
+    border-radius: 8px;
+    text-align: center;
+}
+.skillBox img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .skillsContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.menuItem {
+    color: white;
+    font-size: 2rem;
+    display: block;
+    width: fit-content;
+    margin: 15% auto;
+}
+
+.menuItem:last-child {
+    margin-bottom: 2rem;
+}
+
+#mobileMenu {
+    position: relative;
+    color: white;
+    background-color: #333;
+    z-index: 10;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .200s ease-in-out;
+}
+
+#hamburger {
+    border: 2px solid #333;
+    height: 3rem;
+    width: 3rem;
+    margin: 1rem auto;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.hamline {
+    width: 80%;
+    height: 1px;
+    padding: 0;
+    margin: 3px 0 3px 0;
+    background-color: #333;
+}
+#desktopMenu {
+    display: none;
+}
+
+img {
+    max-width: 100%;
+}
+@media (min-width: 651px) {
+
+    #mobileMenu,
+    #hamburger {
+        display: none;
+    }
+
+    #desktopMenu {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .menuItem {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .skillsContainer {
+        flex-direction: column;
+    }
+    .aboutContainer {
+        flex-direction: column;
+    }
+    .experienceContainer {
+    flex-direction: column;
+    }
+
+    .logisticsScene .truck {           /*makes the truck smaller on mobile*/ 
+    width: 180px;
+    left: 10px;
+}
+    .logisticsScene .ship {            /*makes the ship smaller on mobile*/ 
+    width: 180px;
+    left: 10px;
+}
+    @keyframes driveTruck {           /*reducing that distance to 30 pixels*/          
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(30px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes sailShip {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(30px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.logisticsScene .warehouse {
+    width: 120px;
+    right: 5px;
+    bottom: 50px;
+}
+.logisticsScene .airplane {
+    width: 110px;
+    left: 10px;
+}
+}
+
+.logisticsScene {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #dcecf5;
+    overflow: hidden;
+    border-radius: 10px;
+}
+/* Sun */
+.sun {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background-color: #ffcc33;
+    border-radius: 50%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes moveSun {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(40px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.airplane {
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    width: 150px;
+    height: auto;
+}  
+   @keyframes fly {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(200px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.ship {
+    position: absolute;
+    bottom: 80px;
+    left: 30px;
+    width: 250px;
+    height: auto;
+}
+@keyframes sailShip {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(150px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+/* Truck */
+.truck {
+    position: absolute;
+    bottom: -50px;
+    left: 30px;
+    width: 250px;
+    height: auto;
+}
+@keyframes driveTruck {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(200px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Start animations */
+
+.logisticsScene:hover .airplane {
+    animation: fly 5s linear infinite;
+}
+
+.logisticsScene:hover .truck {
+    animation: driveTruck 6s linear infinite;
+}
+
+.logisticsScene:hover .ship {
+    animation: sailShip 7s ease-in-out infinite;
+    opacity: 0;
+}
+.logisticsScene:hover .sun {
+    animation: moveSun 4s ease-in-out infinite;
+}
+
+.logisticsTitle {
+    display: inline-block;
+    transition: transform 0.6s ease-in-out;
+}
+
+.logisticsTitle:hover {
+    transform: rotate(180deg);
+}
+
+.warehouse {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+    width: 300px;
+    height: auto;
+    z-index: 1;
+}
+
+/* Mobile airplane animation */
+@media screen and (max-width: 600px) {
+
+    @keyframes flyMobile {
+        0% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(30px);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .logisticsScene:hover .airplane {
+        animation: flyMobile 5s linear infinite;
+    }
+
+}
+
+/* Mobile truck animation */
+@media screen and (max-width: 600px) {
+
+    @keyframes driveTruckMobile {
+        0% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(30px);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .logisticsScene:hover .truck {
+        animation: driveTruckMobile 6s linear infinite;
+    }
+}
+
